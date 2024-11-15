@@ -30,6 +30,7 @@ body {
 .image-section {
   position: relative;
   flex: 1;
+  z-index: 1; /* Imagen detrás del título */
 }
 
 .coffee-image {
@@ -38,6 +39,7 @@ body {
   object-fit: cover;
   transition: opacity 0.3s ease;
   border-radius: 20px 10px 30px 10px;
+  z-index: 0; /* Asegura que la imagen esté debajo */
 }
 
 .coffee-image:hover {
@@ -59,11 +61,12 @@ body {
 }
 
 .content-section {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    margin-top: 9%;
+    overflow-y: auto;
 }
 
 .recipe-header {
@@ -100,6 +103,7 @@ body {
 
 .recipe-info_details {
   display: flex;
+  flex-direction: column;
   align-items: center;
   transition: background-color 0.3s ease;
   border-radius: 5px;
@@ -165,6 +169,20 @@ ol {
   transition: max-height 0.3s ease;
 }
 
+.title-container {
+  position: absolute; 
+  top: 50px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 9999;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  width:auto;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 @media (min-width: 768px) {
   body {
     overflow: hidden;
@@ -182,7 +200,7 @@ ol {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 680px) {
   body {
     overflow-y: auto;
   }
