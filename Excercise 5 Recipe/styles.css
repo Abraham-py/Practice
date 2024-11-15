@@ -30,7 +30,7 @@ body {
 .image-section {
   position: relative;
   flex: 1;
-  z-index: 1; /* Imagen detrás del título */
+  z-index: 1;
 }
 
 .coffee-image {
@@ -39,7 +39,7 @@ body {
   object-fit: cover;
   transition: opacity 0.3s ease;
   border-radius: 20px 10px 30px 10px;
-  z-index: 0; /* Asegura que la imagen esté debajo */
+  z-index: 0;
 }
 
 .coffee-image:hover {
@@ -61,12 +61,12 @@ body {
 }
 
 .content-section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 20px;
-    margin-top: 9%;
-    overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  justify-content: flex-end;
 }
 
 .recipe-header {
@@ -98,7 +98,6 @@ body {
 .recipe-info {
   display: flex;
   gap: 15px;
-  margin: 10px 0;
 }
 
 .recipe-info_details {
@@ -107,7 +106,6 @@ body {
   align-items: center;
   transition: background-color 0.3s ease;
   border-radius: 5px;
-  padding: 5px;
 }
 
 .recipe-info_details:hover {
@@ -118,11 +116,6 @@ body {
   margin: 10px 0;
   font-size: 14px;
   color: #666;
-}
-
-.ingredients-section,
-.instructions-section {
-  margin-bottom: 10px;
 }
 
 .ingredients-section h2,
@@ -177,7 +170,7 @@ ol {
   z-index: 9999;
   padding: 15px;
   background-color: rgb(255, 255, 255);
-  width:auto;
+  width: auto;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -197,6 +190,13 @@ ol {
   .content-section {
     flex: 1;
     overflow-y: hidden;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-section {
+    justify-content: center;
   }
 }
 
